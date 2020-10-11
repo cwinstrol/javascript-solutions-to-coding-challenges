@@ -1,0 +1,29 @@
+<!-- challenge from https://www.sitepoint.com/5-common-coding-interview-challenges/ -->
+<html><head></head><body>
+    <label>word 1:</label><input id="w1" type="text" onkeyup="anagram()"><br>
+    <label>word 2:</label><input id="w2" type="text" onkeyup="anagram()"><br>
+    <span style="margin-left: 40px;"></span>
+    <script>
+        function anagram() {
+            let w1 = document.getElementById('w1').value.toLowerCase();
+            let w2 = document.getElementById('w2').value.toLowerCase();
+            if (w1 !== null && w2 !== null && w1.length == w2.length) {
+                let w2Arr = w2.split('');
+                for (i = 0; i < w1.length; i++) {
+                    let matchIndex = w2Arr.indexOf(w1[i]);
+                    if (matchIndex !== -1 && i < w1.length - 1) {
+                        w2Arr.splice(matchIndex, 1);
+                    }
+                    else if (matchIndex !== -1) {
+                        {return document.getElementsByTagName('span')[0].innerText = 'anagram';}
+                    }
+                    else {return document.getElementsByTagName('span')[0].innerText = 'not anagram';}
+                }
+            }
+            else if (w1 !== null && w2 !== null) {
+                document.getElementsByTagName('span')[0].innerText = 'not anagram';
+            }
+            else {document.getElementsByTagName('span')[0].innerText = 'not anagram';}
+        }
+    </script>
+</body></html>
