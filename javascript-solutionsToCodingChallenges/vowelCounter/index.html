@@ -1,0 +1,29 @@
+<!-- challenge from https://www.sitepoint.com/5-common-coding-interview-challenges/ -->
+<html><head></head><body>
+    <input type="text" onkeyup="countVowels(this.value)">
+    <span></span>
+    <script>
+        function countVowels(word) {
+            word = word.toLowerCase();
+            let vowelCount = 0;
+            for (i = 0; i < word.length; i++) {
+                if (word[i] == 'a') {
+                    vowelCount++;
+                }
+                else if (word[i] == 'e') {
+                    vowelCount++;
+                }
+                else if (word[i] == 'i') {
+                    vowelCount++;
+                }
+                else if (word[i] == 'o') {
+                    vowelCount++;
+                }
+                else if (word[i] == 'u') {
+                    vowelCount++;
+                }
+            }
+            document.getElementsByTagName('span')[0].innerText = 'vowel count: ' + vowelCount;
+        }
+    </script>
+</body></html>
