@@ -1,0 +1,11 @@
+<html><head></head><body>
+    <button>Counter</button>
+    <span>Times clicked: 0</span>
+    <script>
+        count = 0;
+        document.getElementsByTagName('button')[0].onclick = function() {
+            count++;
+            document.getElementsByTagName('span')[0].innerText = 'Times clicked: ' + count;
+        } 
+    </script>
+</body></html>

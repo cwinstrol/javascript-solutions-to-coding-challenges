@@ -1,0 +1,21 @@
+<!-- challenge from https://www.sitepoint.com/5-common-coding-interview-challenges/ -->
+<!-- Note that since challenge reads "Include spaces and punctuation in deciding if the string is a palindrome.", spaces are indeed included as a decision factor despite it commonly being agreed upon that palindromes disregard spaces. -->
+<html><head></head><body>
+    <input type="text" onkeyup="palindrome()">
+    <span></span>
+    <br><br><i><span style="font-size: .8em; width: 50%;">Note that since challenge reads "Include spaces and punctuation in deciding if the string is a palindrome.", spaces are indeed included as a decision factor despite it commonly being agreed upon that palindromes disregard spaces.</span></i>
+    <script>
+    function palindrome() {
+        let inputVal = document.getElementsByTagName('input')[0].value.toLowerCase();
+        let loopLength;
+        if (inputVal.length % 2 == 0) {loopLength = inputVal.length / 2;}
+        else {loopLength = (inputVal.length - 1) / 2};
+        for (i = 0; i < loopLength; i++) {
+            if (inputVal[i] == inputVal[inputVal.length - i - 1]) {
+                document.getElementsByTagName('span')[0].innerText = 'Palindrome';
+            }
+            else {document.getElementsByTagName('span')[0].innerText = 'Not palindrome'; return;}
+        }
+    }
+    </script>
+</body></html>

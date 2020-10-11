@@ -1,0 +1,21 @@
+<!-- challenge from https://www.sitepoint.com/5-common-coding-interview-challenges/ -->
+<html><head></head><body>
+    <input type="number" min="1" max="1500" placeholder="1-1500" onchange="fizzBuzz(this.value)"><br>
+    <span style="white-space: pre-line;"></span>
+    <script>
+        function fizzBuzz(n) {
+            let spanStr = '';
+            for (i = 1; i <= n; i++) {
+                if (i % 3 == 0) {
+                    if (i % 5 == 0) {
+                        spanStr += 'fizzbuzz \n';
+                    }
+                    else {spanStr += 'fizz \n';}
+                }
+                else if (i % 5 == 0) {spanStr += 'buzz \n';}
+                else {spanStr += i + '\n';}
+            }
+            document.getElementsByTagName('span')[0].innerText = spanStr;
+        }
+    </script>
+</body></html>
