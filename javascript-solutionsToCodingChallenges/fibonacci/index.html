@@ -1,0 +1,23 @@
+<!-- challenge from https://www.sitepoint.com/5-common-coding-interview-challenges/ -->
+<html><head></head><body>
+    <i><span style="font-size: .9em">press enter/return if number is typed</span></i><br>
+    <input type="number" min="0" max="100" placeholder="0-100" onchange="fibonacci(this.value)">
+    <span></span>
+    <script>
+        function fibonacci(n) {
+            let fNum;
+            let fNumArr = [0, 1];
+            if (n == 0) {fNum = 0;}
+            else if (n == 1) {fNum = 1;}
+            else {
+                for (i = 2; i <= n; i++) {
+                    if (i < n) {
+                        fNumArr[i] = fNumArr[i - 1] + fNumArr[i - 2];
+                    }
+                    else {fNum = fNumArr[i - 1] + fNumArr[i - 2];}
+                }
+            }
+            document.getElementsByTagName('span')[1].innerText = 'fibonacci number ' + n + ' is ' + fNum;
+        }
+    </script>
+</body></html>
