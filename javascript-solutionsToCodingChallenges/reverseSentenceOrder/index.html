@@ -1,0 +1,33 @@
+<!-- challenge: "reverse the order of words in a sentence. capitalize beginning of sentence only if it was initially capitalized. keep punctuation at end of sentence only if it was initially punctuated." -->
+<html><head></head><body>
+    <i><span style="font-size: .9em">press enter/return after sentence is typed</span></i><br>
+    <input type="text" onchange="reverseSentenceWords(this.value)" style="width: 200px;"><br>
+    <span></span>
+    <script>
+        function reverseSentenceWords(sentence) {
+            let firstCharOfSentence = sentence[0];
+            let isCapitalized;
+            if (firstCharOfSentence == firstCharOfSentence.toUpperCase()) {
+                isCapitalized = true;
+                sentence = firstCharOfSentence.toLowerCase().concat(sentence.substr(1, sentence.length - 1));
+            }
+            else {isCapitalized = false;}
+            let lastCharOfSentence = sentence[sentence.length - 1];
+            let punctuation;
+            if (lastCharOfSentence == '.' || lastCharOfSentence == '!' || lastCharOfSentence == '?') {
+                punctuation = lastCharOfSentence;
+                sentence = sentence.substr(0, sentence.length - 1);
+            }
+            let sentenceArray = sentence.split(' ');
+            let sentenceArrayReversed = sentenceArray.reverse();
+            let sentenceArrayReversedAndJoined = sentenceArrayReversed.join(' ');
+            if (isCapitalized == true) {
+                sentenceArrayReversedAndJoined = sentenceArrayReversedAndJoined[0].toUpperCase().concat(sentenceArrayReversedAndJoined.substr(1, sentenceArrayReversedAndJoined.length - 1));
+            }
+            if (punctuation != undefined) {
+                sentenceArrayReversedAndJoined = sentenceArrayReversedAndJoined.concat(punctuation);
+            }
+            document.getElementsByTagName('span')[1].innerText = sentenceArrayReversedAndJoined;
+        }
+    </script>
+</body></html>
